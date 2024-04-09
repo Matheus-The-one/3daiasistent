@@ -61,6 +61,16 @@ export const UI = ({ hidden, ...props }) => {
             )}
           </button>
           <button
+            disabled={loading || message}
+            onClick={sendMessage}
+            className={`bg-purple-500 hover:bg-purple-600 text-white p-4 px-6 font-semibold uppercase rounded-md ${
+              loading || message ? "cursor-not-allowed opacity-30" : ""
+            }`}
+          >
+            
+            ♂
+          </button>
+          <button
             onClick={() => {
               const body = document.querySelector("body");
               if (body.classList.contains("greenScreen")) {
