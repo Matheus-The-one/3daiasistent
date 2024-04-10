@@ -3,5 +3,5 @@
 Start the development server with
 ````
 
-yarn
+yarn install
 yarn run dev
