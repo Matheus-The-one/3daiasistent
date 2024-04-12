@@ -7,6 +7,7 @@ import {
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useChat } from "../hooks/useChat";
 import { Avatar } from "./Avatar";
+import { AvatarMale } from "./AvatarMale";
 
 const Dots = (props) => {
   const { loading } = useChat();
