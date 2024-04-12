@@ -1,57 +1,78 @@
-import React from "react";
-import { useGLTF } from "@react-three/drei";
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
 
 export function AvatarMale(props) {
-  const { nodes } = useGLTF("/models/untitled.glb");
-
+  const { nodes, materials } = useGLTF('models//652cda8933835c7bfb7d43b1.glb')
   return (
     <group {...props} dispose={null}>
       <primitive object={nodes.Hips} />
       <skinnedMesh
-        name="Wolf3D_Body"
-        geometry={nodes.Wolf3D_Body.geometry}
-        material={nodes.Wolf3D_Body.material}
-        skeleton={nodes.Wolf3D_Body.skeleton}
+        name="EyeLeft"
+        geometry={nodes.EyeLeft.geometry}
+        material={materials.Wolf3D_Eye}
+        skeleton={nodes.EyeLeft.skeleton}
+        morphTargetDictionary={nodes.EyeLeft.morphTargetDictionary}
+        morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences}
       />
       <skinnedMesh
-        name="Wolf3D_Outfit_Bottom"
-        geometry={nodes.Wolf3D_Outfit_Bottom.geometry}
-        material={nodes.Wolf3D_Outfit_Bottom.material}
-        skeleton={nodes.Wolf3D_Outfit_Bottom.skeleton}
-      />
-      <skinnedMesh
-        name="Wolf3D_Outfit_Footwear"
-        geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
-        material={nodes.Wolf3D_Outfit_Footwear.material}
-        skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
-      />
-      <skinnedMesh
-        name="Wolf3D_Outfit_Top"
-        geometry={nodes.Wolf3D_Outfit_Top.geometry}
-        material={nodes.Wolf3D_Outfit_Top.material}
-        skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
-      />
-      <skinnedMesh
-        name="Wolf3D_Hair"
-        geometry={nodes.Wolf3D_Hair.geometry}
-        material={nodes.Wolf3D_Hair.material}
-        skeleton={nodes.Wolf3D_Hair.skeleton}
+        name="EyeRight"
+        geometry={nodes.EyeRight.geometry}
+        material={materials.Wolf3D_Eye}
+        skeleton={nodes.EyeRight.skeleton}
+        morphTargetDictionary={nodes.EyeRight.morphTargetDictionary}
+        morphTargetInfluences={nodes.EyeRight.morphTargetInfluences}
       />
       <skinnedMesh
         name="Wolf3D_Head"
         geometry={nodes.Wolf3D_Head.geometry}
-        material={nodes.Wolf3D_Head.material}
+        material={materials.Wolf3D_Skin}
         skeleton={nodes.Wolf3D_Head.skeleton}
+        morphTargetDictionary={nodes.Wolf3D_Head.morphTargetDictionary}
+        morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences}
       />
       <skinnedMesh
         name="Wolf3D_Teeth"
         geometry={nodes.Wolf3D_Teeth.geometry}
-        material={nodes.Wolf3D_Teeth.material}
+        material={materials.Wolf3D_Teeth}
         skeleton={nodes.Wolf3D_Teeth.skeleton}
+        morphTargetDictionary={nodes.Wolf3D_Teeth.morphTargetDictionary}
+        morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
+      />
+      <skinnedMesh
+        name="Wolf3D_Beard"
+        geometry={nodes.Wolf3D_Beard.geometry}
+        material={materials.Wolf3D_Beard}
+        skeleton={nodes.Wolf3D_Beard.skeleton}
+        morphTargetDictionary={nodes.Wolf3D_Beard.morphTargetDictionary}
+        morphTargetInfluences={nodes.Wolf3D_Beard.morphTargetInfluences}
+      />
+      <skinnedMesh
+        geometry={nodes.Wolf3D_Headwear.geometry}
+        material={materials.Wolf3D_Headwear}
+        skeleton={nodes.Wolf3D_Headwear.skeleton}
+      />
+      <skinnedMesh
+        geometry={nodes.Wolf3D_Body.geometry}
+        material={materials.Wolf3D_Body}
+        skeleton={nodes.Wolf3D_Body.skeleton}
+      />
+      <skinnedMesh
+        geometry={nodes.Wolf3D_Outfit_Bottom.geometry}
+        material={materials.Wolf3D_Outfit_Bottom}
+        skeleton={nodes.Wolf3D_Outfit_Bottom.skeleton}
+      />
+      <skinnedMesh
+        geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
+        material={materials.Wolf3D_Outfit_Footwear}
+        skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
+      />
+      <skinnedMesh
+        geometry={nodes.Wolf3D_Outfit_Top.geometry}
+        material={materials.Wolf3D_Outfit_Top}
+        skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
       />
     </group>
-  );
+  )
 }
 
-useGLTF.preload("/models/untitled.glb");
-
+useGLTF.preload('/652cda8933835c7bfb7d43b1.glb')
