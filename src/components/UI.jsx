@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useChat } from "../hooks/useChat";
+import AvatarSwitchButton from "./AvatarSwitchButton";
 
 export const UI = ({ hidden, ...props }) => {
   const input = useRef();
@@ -60,16 +61,7 @@ export const UI = ({ hidden, ...props }) => {
               </svg>
             )}
           </button>
-          <button
-            disabled={loading || message}
-            onClick={sendMessage}
-            className={`bg-purple-500 hover:bg-purple-600 text-white p-4 px-6 font-semibold uppercase rounded-md ${
-              loading || message ? "cursor-not-allowed opacity-30" : ""
-            }`}
-          >
-            
-            ♂
-          </button>
+             <AvatarSwitchButton />
           <button
             onClick={() => {
               const body = document.querySelector("body");
