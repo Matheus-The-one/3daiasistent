@@ -41,6 +41,7 @@ const Dots = (props) => {
 export const Experience = () => {
   const cameraControls = useRef();
   const { cameraZoomed } = useChat();
+  const { isFemale } = useChat();
 
   useEffect(() => {
     cameraControls.current.setLookAt(0, 2, 5, 0, 1.5, 0);
@@ -61,7 +62,8 @@ export const Experience = () => {
       <Suspense>
         <Dots position-y={1.75} position-x={-0.02} />
       </Suspense>
-      <Avatar />
+      {isFemale ? <Avatar /> : <AvatarMale />}
+
       <ContactShadows opacity={0.7} />
     </>
   );

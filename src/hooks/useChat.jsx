@@ -22,6 +22,12 @@ export const ChatProvider = ({ children }) => {
   const [message, setMessage] = useState();
   const [loading, setLoading] = useState(false);
   const [cameraZoomed, setCameraZoomed] = useState(true);
+  const [isFemale, setIsFemale] = useState(true);
+
+const toggleAvatarGender = () => {
+  setIsFemale((prevIsFemale) => !prevIsFemale);
+};
+
   const onMessagePlayed = () => {
     setMessages((messages) => messages.slice(1));
   };
@@ -43,6 +49,8 @@ export const ChatProvider = ({ children }) => {
         loading,
         cameraZoomed,
         setCameraZoomed,
+        isFemale,
+        toggleAvatarGender,
       }}
     >
       {children}
